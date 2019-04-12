@@ -1,7 +1,7 @@
 # CRUD-Rest
 Proyecto con base en Slim/Skeleton para realizar api´s para altas bajas y cambios en una base de datos. 
 
-##Instalación 
+## Instalación 
 Vemos que el Framework Slim 3, al igual que este proyecto, trabaja bajo ciertos requerimientos los cuales son necesarios para un correcto funcionamineto.
  
  **Lista de los requisistos para este proyecto son:**
@@ -25,11 +25,11 @@ Vemos que el Framework Slim 3, al igual que este proyecto, trabaja bajo ciertos 
  Con uno de esos comando activamos un pequeño servidor local el cual nos permitira interacturar con el Api Rest programado.
  
  
- ##Rutas y Consumo de Api´s
+ ## Rutas y Consumo de Api´s
  
  En esta sección se describe las rutas de acceso, el uso adecuado y respuesta de la aplicacion web.
  
- ###Obtener todos los usuarios
+ ### Obtener todos los usuarios
  
     localhost:8080/user/allusers
  
@@ -67,7 +67,7 @@ Esta ruta es de tipo **GET**, no recibe ningun dato, y nos devuelve un **JSON** 
     ]
 ````
 
-###Obtener un Usuario
+### Obtener un Usuario
 
     localhost:8080/user/{id}
 
@@ -86,7 +86,7 @@ Esta ruta es de tipo **GET**, recibe un Atributo en la URL, Sustituir **{id}** p
     ] 
 ````
 
-###Crear un Usuario
+### Crear un Usuario
 
     localhost:8080/user/New
 
@@ -108,7 +108,7 @@ En caso de no ser agregado corectamente:
     }
 ````
 
-###Modificación de un Usuario
+### Modificación de un Usuario
 
     localhost:8080/user/Update/{id}
     
@@ -133,7 +133,7 @@ En caso de no ser actualizado corectamente:
     ]
 ````
 
-###Borrar a un usuario
+### Borrar a un usuario
     
     localhost:8080/user/Update/{id}
 
@@ -158,7 +158,7 @@ En caso de no ser borrado corectamente:
     ]
 ````
 
-###Login de un Usuario
+### Login de un Usuario
 
     localhost:8080/user/Login
 
