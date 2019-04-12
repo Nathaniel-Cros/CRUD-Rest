@@ -4,10 +4,10 @@
     use \PDO;
 
     class db{
-        private $dbHost = 'localhost:8889';
-        private $dbUser = 'root';
-        private $dbPass = 'root';
-        private $dbName = 'Crud_Rest';
+        private $dbHost = '67.227.237.216';//'localhost:8889';
+        private $dbUser = 'cernetco_root';//'root';
+        private $dbPass = 'fykP}4g$.0Sv';//'root';
+        private $dbName = 'cernetco_Crud_Rest';
 
         /*
          * Conexion a la base de datos
