@@ -80,16 +80,17 @@ class CrudController
 
             $resultado = $db->prepare($sql);
 
-            $resultado->execute(array(
+            if($resultado->execute(array(
                 'nombre' => $nombre,
                 'telefono' => $telefono,
                 'direccion' => $direccion,
                 'email' => $email,
                 'username' => $username,
                 'pass' => md5($pass),
-            ));
-
-            echo "'mensaje: Usuario agregago'";
+            )))
+                echo json_encode(array('mensaje' => 'Usuario agregado'));
+            else
+                echo json_encode(array('mensaje:'=> 'Error al agregar usuario'));
 
             $resultado->closeCursor();
             $resultado = null;
@@ -136,9 +137,10 @@ class CrudController
             $result->bindParam(':username', $username);
             $result->bindParam(':pass', md5($pass));
 
-            $result->execute();
-
-            echo json_encode(array(['mensaje' => 'Usuario '.$id.' Modificado']));
+            if($result->execute())
+                echo json_encode(array(['mensaje' => 'Usuario con id '.$id.': Modificado Correctamente!']));
+            else
+                echo json_encode(array(['mensaje' => 'Error usuario con id '.$id.': No modificado!']));
 
             $result->closeCursor();
             $db = null;
@@ -165,9 +167,9 @@ class CrudController
                 "id"=>$id
             ));
             if( $result->rowCount() > 0 ){
-                echo json_encode("Usuario Eliminado");
+                echo json_encode(array(['mensaje' => 'Usuario con id '.$id.': Borrado Correctamente!']));
             }else{
-                echo json_encode("No existe el usuario con el ID: $id");
+                echo json_encode(array(['mensaje' => 'Usuario con id '.$id.': No Borrado!']));
             }
             $result->closeCursor();
             $db = null;
@@ -215,7 +217,7 @@ class CrudController
 
                 echo json_encode($token);
             }else{
-                echo json_encode("Rectifica tus datos.");
+                echo json_encode(array(['mensaje'=>'Rectifica tus datos']));
             }
             //$db->closeCursor();
             $db = null;
